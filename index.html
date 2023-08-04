@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio Management</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: "Futura Sans", Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* CSS styles for Stock Market Section */
+        #stockMarketSection {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        #stockMarketSection h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+
+        #stockMarketSection table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        #stockMarketSection th, #stockMarketSection td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        #stockMarketSection th {
+            background-color: #f2f2f2;
+        }
+
+        #stockMarketSection .profit {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        #stockMarketSection .loss {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        /* CSS styles for Stock Management Section */
+        #stockManagementSection {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        #stockManagementSection h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #007BFF;
+        }
+
+        #stockMarketTable {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        #stockManagementSection button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 4px;
+        }
+
+        #stockManagementSection button:hover {
+            background-color: #0056b3;
+        }
+
+        /* CSS styles for Fund Management Section */
+        #fundManagementSection {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        #fundManagementSection h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+
+        #fundManagementSection h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #007BFF;
+        }
+
+        #fundManagementSection table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        #fundManagementSection input[type="number"] {
+            width: 80px;
+            padding: 6px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            color: #333;
+        }
+
+        #fundManagementSection button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 4px;
+        }
+
+        #fundManagementSection button:hover {
+            background-color: #0056b3;
+        }
+
+        #fundTotalReturnBox {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        #fundTotalReturnBox h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #fundTotalReturnBox p {
+            font-size: 18px;
+        }
+
+        /* CSS styles for Formula Section */
+        .formula-section {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin: 20px;
+            border-radius: 8px;
+        }
+
+        .formula-section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #007BFF;
+        }
+
+        .formula-section p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="stockMarketSection">
+        <h1>Stock Market Table</h1>
+        <table>
+            <tr>
+                <th>Stock</th>
+                <th>2018</th>
+                <th>2019</th>
+                <th>2020</th>
+                <th>2021</th>
+                <th>2022</th>
+            </tr>
+            <tr>
+                <td>Apple</td>
+                <td class="profit">$142.18</td>
+                <td class="profit">$194.23</td>
+                <td class="profit">$233.47</td>
+                <td class="loss">$157.32</td>
+                <td class="loss">$143.19</td>
+            </tr>
+            <tr>
+                <td>Tesla</td>
+                <td class="profit">$342.29</td>
+                <td class="profit">$498.32</td>
+                <td class="profit">$900.40</td>
+                <td class="loss">$877.50</td>
+                <td class="loss">$699.21</td>
+            </tr>
+            <tr>
+                <td>Meta</td>
+                <td class="profit">$176.29</td>
+                <td class="profit">$237.00</td>
+                <td class="profit">$333.00</td>
+                <td class="loss">$304.22</td>
+                <td class="loss">$119.69</td>
+            </tr>
+            <tr>
+                <td>Amazon</td>
+                <td class="profit">$1712.60</td>
+                <td class="profit">$2042.00</td>
+                <td class="profit">$3000.00</td>
+                <td class="profit">$3238.00</td>
+                <td class="loss">$2868.00</td>
+            </tr>
+            <tr>
+                <td>Alphabet</td>
+                <td class="profit">$1014.91</td>
+                <td class="profit">$1320.00</td>
+                <td class="profit">$1530.00</td>
+                <td class="loss">$1227.00</td>
+                <td class="loss">$982.66</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="stockManagementSection">
+        <h2>Stock Market Table Management</h2>
+        <table id="stockMarketTable">
+            <tr>
+                <th>Security</th>
+                <th>Quantity</th>
+                <th>Historical Rate of Return (5 Years)</th>
+                <th>Delete</th>
+            </tr>
+        </table>
+
+        <button onclick="addSecurity()">Add Security</button>
+
+        <script>
+            // JavaScript code for Stock Market Table Management
+            const stockData = [
+                { name: 'Apple', prices: [142.18, 194.23, 233.47, 157.32, 143.19] },
+                { name: 'Tesla', prices: [342.29, 498.32, 900.40, 877.50, 699.21] },
+                { name: 'Meta', prices: [176.29, 237.00, 333.00, 304.22, 119.69] },
+                { name: 'Amazon', prices: [1712.60, 2042.00, 3000.00, 3238.00, 2868.00] },
+                { name: 'Alphabet', prices: [1014.91, 1320.00, 1530.00, 1227.00, 982.66] }
+            ];
+
+            function addSecurity() {
+                var stockMarketTable = document.getElementById('stockMarketTable');
+                var newRow = stockMarketTable.insertRow(-1);
+
+                var securityCell = newRow.insertCell(0);
+                var quantityCell = newRow.insertCell(1);
+                var rateOfReturnCell = newRow.insertCell(2);
+                var deleteCell = newRow.insertCell(3);
+
+                var stockSelect = document.createElement('select');
+                stockData.forEach(function (stock) {
+                    var option = document.createElement('option');
+                    option.value = stock.name;
+                    option.text = stock.name;
+                    stockSelect.appendChild(option);
+                });
+                stockSelect.onchange = function() {
+                    var selectedStock = stockData.find(stock => stock.name === stockSelect.value);
+                    securityCell.innerHTML = selectedStock.name;
+                };
+                securityCell.appendChild(stockSelect);
+
+                var quantityInput = document.createElement('input');
+                quantityInput.type = 'number';
+                quantityCell.appendChild(quantityInput);
+
+                var calculateButton = document.createElement('button');
+                calculateButton.textContent = 'Calculate';
+                calculateButton.onclick = function() {
+                    var selectedStock = stockData.find(stock => stock.name === stockSelect.value);
+                    var historicalRateOfReturn = calculateHistoricalRateOfReturn(selectedStock.prices);
+                    rateOfReturnCell.innerHTML = historicalRateOfReturn.toFixed(2) + '%';
+                };
+                rateOfReturnCell.appendChild(calculateButton);
+
+                var deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.onclick = function() {
+                    stockMarketTable.deleteRow(newRow.rowIndex);
+                };
+                deleteCell.appendChild(deleteButton);
+            }
+
+            function calculateHistoricalRateOfReturn(prices) {
+                var initialPrice = prices[0];
+                var finalPrice = prices[prices.length - 1];
+                var rateOfReturn = ((finalPrice - initialPrice) / initialPrice) * 100;
+                return rateOfReturn;
+            }
+        </script>
+    </div>
+
+    <div class="formula-section">
+        <h2>Formula used for Stock Market Table Calculation:</h2>
+        <p>Total Return Rate = (Final Price - Initial Price) / Initial Price * 100</p>
+        <p>Example Calculation:</p>
+        <p>For a stock with prices [142.18, 194.23, 233.47, 157.32, 143.19],</p>
+        <p>Initial Price = 142.18, Final Price = 143.19</p>
+        <p>Total Return Rate = (143.19 - 142.18) / 142.18 * 100 ≈ 0.71%</p>
+    </div>
+
+    <div id="fundManagementSection">
+        <h1>Fund Management</h1>
+
+        <h2>Display Data</h2>
+        <table>
+            <tr>
+                <th>Fund Name</th>
+                <th>Absolute Return Year 1 (%)</th>
+                <th>Absolute Return Year 5 (%)</th>
+            </tr>
+            <tr>
+                <td>Bank of India Infrastructure Fund</td>
+                <td class="profit" align="center">25.59</td>
+                <td class="profit" align="center">107.26</td>
+            </tr>
+            <tr>
+                <td>Nippon India Multicap Fund</td>
+                <td class="profit" align="center">28.09</td>
+                <td class="profit" align="center">116.79</td>
+            </tr>
+            <tr>
+                <td>Invesco India Infrastructure Fund</td>
+                <td class="profit" align="center">24.59</td>
+                <td class="profit" align="center">143.69</td>
+            </tr>
+            <tr>
+                <td>Motilal Oswal Midcap Fund</td>
+                <td class="profit" align="center">23.99</td>
+                <td class="profit" align="center">122.50</td>
+            </tr>
+        </table>
+
+        <h2>User Input</h2>
+        <table>
+            <tr>
+                <th>Fund Name</th>
+                <th>Absolute Return Year 1 (%)</th>
+                <th>Absolute Return Year 5 (%)</th>
+                <th>Percentage Invested (%)</th>
+            </tr>
+            <tr>
+                <td>Bank of India Infrastructure Fund</td>
+                <td class="profit" align="center">25.59</td>
+                <td class="profit" align="center">107.26</td>
+                <td><input type="number" id="investmentPercentage1" min="0" max="100" step="1" /></td>
+            </tr>
+            <tr>
+                <td>Nippon India Multicap Fund</td>
+                <td class="profit" align="center">28.09</td>
+                <td class="profit" align="center">116.79</td>
+                <td><input type="number" id="investmentPercentage2" min="0" max="100" step="1" /></td>
+            </tr>
+            <tr>
+                <td>Invesco India Infrastructure Fund</td>
+                <td class="profit" align="center">24.59</td>
+                <td class="profit" align="center">143.69</td>
+                <td><input type="number" id="investmentPercentage3" min="0" max="100" step="1" /></td>
+            </tr>
+            <tr>
+                <td>Motilal Oswal Midcap Fund</td>
+                <td class="profit" align="center">23.99</td>
+                <td class="profit" align="center">122.50</td>
+                <td><input type="number" id="investmentPercentage4" min="0" max="100" step="1" /></td>
+            </tr>
+        </table>
+        
+        <button onclick="calculateTotalReturn()">Calculate Total Return</button>
+
+        <div id="fundTotalReturnBox"></div>
+
+        <script>
+            // JavaScript code for Fund Management Section
+            function calculateTotalReturn() {
+                var investmentPercentage1 = parseFloat(document.getElementById('investmentPercentage1').value);
+                var investmentPercentage2 = parseFloat(document.getElementById('investmentPercentage2').value);
+                var investmentPercentage3 = parseFloat(document.getElementById('investmentPercentage3').value);
+                var investmentPercentage4 = parseFloat(document.getElementById('investmentPercentage4').value);
+                
+                if (isNaN(investmentPercentage1) || isNaN(investmentPercentage2) || isNaN(investmentPercentage3) || isNaN(investmentPercentage4) ||
+                    investmentPercentage1 < 0 || investmentPercentage1 > 100 || investmentPercentage2 < 0 || investmentPercentage2 > 100 ||
+                    investmentPercentage3 < 0 || investmentPercentage3 > 100 || investmentPercentage4 < 0 || investmentPercentage4 > 100) {
+                    alert('Please enter valid percentages (0-100%).');
+                    return;
+                }
+
+                var absoluteReturnsYear1 = [25.59, 28.09, 24.59, 23.99];
+                var absoluteReturnsYear5 = [107.26, 116.79, 143.69, 122.50];
+
+                var totalReturnYear1 = (investmentPercentage1 / 100) * absoluteReturnsYear1[0] +
+                    (investmentPercentage2 / 100) * absoluteReturnsYear1[1] +
+                    (investmentPercentage3 / 100) * absoluteReturnsYear1[2] +
+                    (investmentPercentage4 / 100) * absoluteReturnsYear1[3];
+
+                var totalReturnYear5 = (investmentPercentage1 / 100) * absoluteReturnsYear5[0] +
+                    (investmentPercentage2 / 100) * absoluteReturnsYear5[1] +
+                    (investmentPercentage3 / 100) * absoluteReturnsYear5[2] +
+                    (investmentPercentage4 / 100) * absoluteReturnsYear5[3];
+
+                var totalReturnResultDiv = document.getElementById('fundTotalReturnBox');
+                totalReturnResultDiv.innerHTML = '<h2>Total Return</h2>';
+                totalReturnResultDiv.innerHTML += '<p>Total Return Rate (1 Year): ' + totalReturnYear1.toFixed(2) + '%</p>';
+                totalReturnResultDiv.innerHTML += '<p>Total Return Rate (5 Years): ' + totalReturnYear5.toFixed(2) + '%</p>';
+            }
+        </script>
+    </div>
+
+    <div class="formula-section">
+        <h2>Formula used for Fund Management Calculation:</h2>
+        <p>Total Return = ∑ (Investment Percentage * Absolute Return)</p>
+        <p>Example Calculation:</p>
+        <p>For investments: Fund1 - 30%, Fund2 - 20%, Fund3 - 40%, Fund4 - 10%</p>
+        <p>Using absolute returns [25.59, 28.09, 24.59, 23.99],</p>
+        <p>Total Return = (30% * 25.59) + (20% * 28.09) + (40% * 24.59) + (10% * 23.99) ≈ 25.53%</p>
+    </div>
+</body>
+</html>
